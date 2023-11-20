@@ -1,0 +1,6 @@
+.headnav {
+    color: aliceblue;
+    grid-area: nav;
+    width: 100%;
+    max-width: 90vw;
+}

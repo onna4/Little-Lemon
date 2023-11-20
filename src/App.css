@@ -1,38 +1,655 @@
-.App {
+:root {
+  --olive-green: #495E57;
+  --off-white: #EDEFEE;
+  --yellow: #F4CE14;
+  --karla-font: 'Karla', sans-serif;
+  --Markazi-font: 'Markazi Text', serif;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 90px 1fr auto;
+  grid-template-areas: "heading"
+  "main"
+  "footer";
+}
+.hero, .menu-specials, .testimonials, .about {
+  padding: 1em 1.5em;
+  max-width: 100vw;
+}
+.dishes, .review-container, .about {
+  flex-direction: column;
+} 
+.footer-nav {
+  padding: 2em 1.3em;
+}
+.footer-logo {
+  margin-bottom: 1em;
+  margin-left: 7em;
+}
+header {
+  margin: 0.5em .5em 0;
+  padding: 1.3em 1em;
+  grid-area: header;
+  width: 100%;
+}
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+}
+.navList li {
+  list-style: none;
+  text-decoration: none;
   text-align: center;
+  font-weight: bold;
+  margin: 1.5em;
+}
+.navList a {
+  color: black;
+}
+.navList {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: var(--off-white);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+.navButton {
+  background-color: white;
+  width: 3.2rem;
+}
+.navButton img {
+  border-radius: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.headnav {
+  display: none;
+}
+.headnav ul {
+    display: flex;
+    margin: 1em;
+}
+.headnav a {
+  margin: 1em;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footerNav a {
+  color: white;
+}
+nav a {
+  text-decoration: none;
+}
+
+button {
+  background: var(--yellow);
+  color:black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: .5em;
+  width: 12.5em;
+  height: 2.8em;
+  border:none;
+  cursor: pointer;
+}
+
+li {
+  font-size: 1rem;
+}
+.title, .review-title {
+  color: var(--yellow);
+}
+
+h1, h2, h3 {
+  font-family: var(--Markazi-font);
+}
+
+p, li {
+  font-family: var(--karla-font);
+}
+
+footer {
+  background-color: var(--olive-green);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  grid-area: footer;
+  padding: 0 10em;
+}
+
+.footerNav li {
+  line-height: 1.5;
+}
+
+.footerNav .title {
+  font-size: 1.5rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  background-color: white;
+  grid-area: main;
+  display:grid;
+  grid-template-rows: repeat(4, auto);
+  /* 411px 844px 578px 583px */
+}
+.hero {
+  background: var(--olive-green);
+}
+.testimonials {
+  background: var(--off-white);
+  text-align: center;
+}
+.review-container {
+  display: flex;
+  margin-top: 1em;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.specials-flex {
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.user-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 1em;
+}
+
+.main-parag, .main-title {
+  color: white;
+}
+
+.main-img {
+  max-height: 150px;
+  max-width: 147px;
+  min-width: 140px;
+  align-self: center;
+  margin-top: 1em;
+}
+
+img {
+  border-radius: 15px;
+}
+
+.hero .title, .about .title {
+  font-size: 3rem;
+}
+
+.hero-img {
+  max-height: 320px;
+  min-width: 100vw;
+  object-fit: cover;
+}
+
+.hero {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  font-size: 2.3rem;
+}
+
+.main-parag {
+  font-size: 1.3rem;
+  margin: 0.5em 1em 1em 0;
+}
+
+.about-title {
+  margin-top: 1rem;
+}
+
+.test-title, .about-title {
+  font-size: 2.2rem;
+}
+
+.about .title {
+  margin-top: 1em;
+}
+
+.about-parag {
+  font-size: 1.3rem;
+  margin-top: 1.5em;
+  margin-right: 1.5em;
+}
+
+.about, .specials-flex {
+  display:flex;
+}
+
+.pics {
+  display: grid;
+  grid-template-columns: 115px 130px 110px;
+  grid-template-rows: 120px;
+  margin-top: 2rem;
+}
+
+.img-top {
+  grid-row-start: 2;
+}
+
+.img-bottom {
+  grid-column-start: 2;
+}
+
+.pic {
+  max-height: 200px;
+}
+
+.review {
+  background-color: var(--olive-green);
+  margin: 0.3em .7em;
+  padding: .7em;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.review-text {
+  height: 50%;
+}
+.menu-specials img {
+  max-height: 100px;
+  border-radius: 15px 15px 0 0;
+}
+
+.dishInfo {
+  background-color: #EFE6E6;
+  margin: 0.5em;
+  min-height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 15px;
+}
+.dish-flex {
+  padding: 1.5em;
+}
+.dish-flex p:last-of-type {
+  margin: 0.7em 0;
+}
+
+.dishes {
+  display: flex;
+  max-width: 70rem;
+  overflow-y: scroll;
+}
+
+.menu-specials h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.menu-specials button {
+  margin-left: auto;
+}
+
+.reservations {
+  display: grid;
+  grid-template-columns: 2 repeat(1fr, 1fr);
+}
+.check-sign {
+  max-height: 7rem;
+  border-radius: 50%;
+  text-align: center;
+  margin: 6em auto 2em;
+}
+
+.restaurant-table {
+  max-width: 11rem;
+}
+
+.footer-nav .title {
+  margin-bottom: .2em;
+}
+.footerNav ul {
+  display: none;
+}
+.reservations {
+  line-height: 1.7;
+  font-size: 1.2rem;
+  max-width: 900px;
+}
+input, select, textarea {
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+} 
+.reservations h1 {
+  margin: 0.5em 0.75em 0;
+}
+.reserv-title, .reservations form {
+  margin: 0.5em 1.5em;
+}
+.reserv-title {
+  display: flex;
+  justify-content: space-around;
+}
+.guest-info .reserv-title {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  width: 50%;
+}
+.reservations form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.reservations label, legend, input, textarea, select {
+  margin-bottom: 1em;
+  padding-right: 0.5em;
+  text-indent: 0.6em;
+  border-radius: 7px;
+}
+.reservations label, legend, .guest-info input, textarea {
+  background-color: var(--olive-green);
+  color: white;
+}
+.guest-info input, textarea, select {
+  padding: 0.2rem;
+}
+.form-flex {
+  display: flex;
+  flex-direction: row;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-bottom: 2em;
+}
+.btn-center {
+  margin-top: 2em;
+}
+.reservations .radio-btn {
+  background-color: white;
+  color: black;
+  margin-bottom: 0;
+  text-indent: 0.3em;
+}
+.guest-info h1, .guest-info img  {
+  margin-left: 1.5rem;
+}
+.guest-info h1 {
+  font-weight: 300;
+}
+.guest-title {
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+}
+.guest-info form {
+  display: grid;
+  width: 80%;
+}
+.guest-info {
+  width: 100vw;
+}
+.infoIcon {
+  height: 17px;
+  border-radius: 1px;
+}
+.flex-container {
+  display: flex;
+}
+::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: white;
+}
+.confirmation {
+  display: grid;
+  place-items: center;
+}
+.confirmation h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+.confirmation h2 {
+  font-size: 2rem;
+  margin-top: 2em;
+  font-weight: 300;
+}
+.star-rating {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:1em .2em;
+  text-align:center;
+  width: 12rem;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color:#ccc;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:#f90;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:#fc0;
+}
+@media (min-width: 768px){ 
+  #root{
+    grid-template-rows: 120px 1fr auto;
   }
-  to {
-    transform: rotate(360deg);
+  main {
+    grid-template-rows: repeat(3, auto) 583px;
+  }
+  .heading{
+    grid-area: heading;
+  }
+  .navButton {
+    display: none;
+  }
+  .hero, .menu-specials, .testimonials, .about, .reservations, .guest-info {
+    padding: 1.5em 4em;
+  }
+  .headnav {
+    display: block;
+  }
+  .headnav li:first-of-type {
+    margin-left: auto;
+  }
+  .headnav, header {
+    padding: 1.7em .5em;
+  }
+  header .icon {
+    display: none;
+  }
+  li {
+    font-size: 1.1rem;
+  }
+  .hero {
+    display:flex;
+    flex-wrap: nowrap;
+  }
+  .main-img {
+    max-height: 380px;
+    max-width: 280px;
+    min-width: auto;
+    margin-bottom: -7em;
+  }
+  .main-parag {
+    font-size: 1.5rem;
+    margin: 0.5em 3em 1em 0;
+  }
+  .menu-specials {
+    margin-top: 5.5em;
+  }
+  .testimonials {
+    margin-top: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .dishes {
+    max-width: 70rem;
+    overflow-x: scroll;
+  }
+  .dishes, .hero, .review-container, .about {
+    flex-direction: row;
+  }
+  .review-container {
+    margin-top: 4em;
+  }
+  .hero .title, .about .title {
+    font-size: 3.35rem;
+  }
+  .dishInfo {
+    display: block;
+  }
+  .dish-flex {
+    padding: 1em;
+  }
+  .menu-specials img {
+    min-height: 177px;
+    width: 266px;
+  }
+  .menu-specials h1 {
+    font-size: 3rem;
+  }
+  .review-container .review {
+    margin: 2em .5em;
+    overflow: visible;
+  }
+  .pics {
+    display: grid;
+    grid-template-columns: 135px 120px 138px;
+    grid-template-rows: repeat(3, 120px);
+    margin-top: 2rem;
+  }
+  .pic {
+    max-height: 300px;
+  }
+  .img-top {
+    grid-row-start: 2;
+  }
+  
+  .img-bottom {
+    grid-column-start: 2;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+  }
+  .footer-logo {
+    margin-left: 1.7em;
+  }
+  .footerNav ul {
+    display: block;
+  }
+  .footerNav .title {
+    font-size: 1.8rem;
+    margin-bottom: .4em;
+    color: var(--yellow);
+  }
+  .reservations label, legend {
+    margin-right: 2em;
+    padding-right: 1em;
+  }
+  .flex-container {
+    float: right;
+    flex-direction: column;
+    padding-right: 2.3rem;
+    line-height: 1.7;
+  }
+  .guest-info form {
+    width: 50%;
+  }
+  .confirmation h1 {
+    font-size: 3.3rem;
+  }
+}
+@media (min-width: 992px){
+  .hero, .menu-specials, .testimonials {
+    padding: 4em 8em;
+  }
+  .about, .guest-info {
+    padding: 1.5em 8em;
+  }
+  .reservations  {
+    padding-left: 6em;
+  }
+  .footer-nav {
+    padding: 2em 8em;
+  }
+  .hero .title, .about .title {
+    font-size: 3.6rem;
+  }
+  .headnav, header {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .headnav {
+    padding-right: 8em; 
+  }
+  header {
+    margin-left: 3em;
+    padding-left: 5em;
+    margin-right: auto;
+  }
+  .about-parag {
+    font-size: 1.4rem;
+  }
+  .main-parag {
+    font-size: 1.65rem;
+    margin-right: 3em;
+  }
+  .pics {
+    grid-template-columns: 185px 140px 120px;
+    grid-template-rows: repeat(3, 140px);
+  }
+  .pic {
+    max-height: 328px;
+  }
+
+  .main-img {
+    max-height: 448px;
+    max-width: 330px;
+    margin-bottom: -8em;
+  }
+}
+@media (min-width: 1200px){
+  .about-parag {
+    font-size: 1.5rem;
+  }
+  .main-parag {
+    font-size: 1.8rem;
+  }
+  .hero .title, .about .title {
+    font-size: 3.9rem;
+  }
+  .dishInfo {
+    margin: 1em;
+  }
+  .review-container .review {
+    margin: 0.3em 1em;
+    padding: 1em;
   }
 }
